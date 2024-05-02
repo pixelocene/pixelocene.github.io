@@ -72,9 +72,15 @@ devserver-global:
 publish:
 	"$(PELICAN)" "$(INPUTDIR)" -o "$(OUTPUTDIR)" -s "$(PUBLISHCONF)" -t "$(THEMEDIR)" $(PELICANOPTS)
 
-github: publish
+prod-theme:
+	cd theme; make prod
+
+github: prod-theme publish 
 	ghp-import -m "Generate Pelican site" -b $(GITHUB_PAGES_BRANCH) "$(OUTPUTDIR)"
-	git push origin $(GITHUB_PAGES_BRANCH)
+	#git push origin $(GITHUB_PAGES_BRANCH)
 
+develop:
+	make devserver PORT=8888
+	cd theme; make dev
 
-.PHONY: html help clean regenerate serve serve-global devserver devserver-global publish github
+.PHONY: html help clean regenerate serve serve-global devserver devserver-global publish github prod-theme develop

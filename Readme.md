@@ -1,3 +1,21 @@
+# Pixelocene's devlog
+
+## Dev
+
 ```
-$ make devserver PORT=8888
+$ make develop
+```
+
+## Publish
+
+You need `ghp-import` python module:
+
+```bash
+$ pip install ghp-import
+```
+
+Then
+
+```bash
+$ make github
 ```
