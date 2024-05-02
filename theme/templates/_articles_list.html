@@ -1,0 +1,29 @@
+{% if articles %}
+
+        {% for article in articles_page.object_list %}
+
+            <div class="card">
+                <div class="card-body">
+                    <div class="article-infos">
+                        {% include '_article_infos.html' %}
+                    </div>
+                    <h5 class="card-title">
+                        <a href="{{ SITEURL }}/{{ article.url }}" title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a>
+                    </h5>
+                    <div class="card-text">
+                        {{ article.summary }}
+                    </div>
+                </div>
+            </div>
+
+        {% endfor %}
+
+        {% if articles_page.has_other_pages() %}
+            {% include '_pagination.html' %}
+        {% endif %}
+
+    {% else %}
+
+        <!-- No content? -->
+        
+    {% endif %}

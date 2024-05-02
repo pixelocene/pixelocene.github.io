@@ -1,0 +1,31 @@
+{% extends "_layout.html" %}
+
+{% if author == "P-Rex" %}
+    {% set AUTHOR_PORTRAIT = "p-rex.jpeg" %}
+    {% set AUTHOR_GITHUB = "pixelosaurus-rex" %}
+{% endif %}
+
+{% block body %}
+
+    <div class="card">
+        <div class="card-body">
+            <img class="author-portrait" src="{{ SITEURL }}/theme/images/authors/{{ AUTHOR_PORTRAIT }}" />
+            <h1>
+                {{ author }}
+            </h1>
+
+            <ul class="informations">
+                <li>
+                    <i class="bi bi-github"></i>
+                    <a href="https://github.com/{{ AUTHOR_GITHUB }}" target="_blank">
+                        @{{ AUTHOR_GITHUB }}
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+
+    {% include '_articles_list.html' %}
+    
+{% endblock %}

@@ -1,0 +1,14 @@
+__pycache__
+
+output
+
+theme/node_modules
+
+theme/static/css
+!theme/static/css/.gitkeep
+
+theme/static/js
+!theme/static/js/.gitkeep
+
+theme/static/fonts
+!theme/static/fonts/.gitkeep

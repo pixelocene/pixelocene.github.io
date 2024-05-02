@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en" data-bs-theme="dark">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>{% block title %}Home{% endblock %} - {{ SITENAME }}</title>
+        <link rel="stylesheet" href="{{ SITEURL }}/theme/css/theme.css">
+        <link rel="stylesheet" href="{{ SITEURL }}/theme/fonts/bootstrap-icons.css">
+        <link rel="icon" href="{{ SITEURL }}/theme/images/pixelocene_logo.png" type="image/png">
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                {% include "_navbar.html" %}
+                {% block body %}{% endblock %}
+            </div>
+        </div>
+        <script src="{{ SITEURL }}/theme/js/bootstrap.bundle.min.js"></script>
+    </body>
+</html>

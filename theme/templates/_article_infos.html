@@ -1,0 +1,31 @@
+
+<footer class="d-flex justify-content-between">
+
+    <div>
+        <span class="badge text-bg-primary" title="Published">
+            <i class="bi bi-calendar-fill"></i>
+            {{ article.date|strftime('%Y-%m-%d') }}
+        </span>
+    </div>
+
+    {% if article.authors %}
+        <div>
+            {% for author in article.authors %}
+                <a class="badge text-bg-success" href="{{ SITEURL }}/{{ author.url }}">
+                    <i class="bi bi-person-circle"></i>
+                    {{ author }}
+                </a>
+            {% endfor %}
+        </div>
+    {% endif %}
+
+    <div>
+        <a href="{{ SITEURL }}/{{ article.category.url }}" class="badge text-bg-primary">
+            <i class="bi bi-folder-fill"></i>
+            {{ article.category }}
+        </a>
+    </div>
+
+    {% include '_taglist.html' %}
+
+</footer>
